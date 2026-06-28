@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Main Jaringan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ PAGE 1: ENVELOPE ============ -->
+  <div id="page-envelope" class="page active">
+    <!-- Islamic geometric background pattern -->
+    <div class="geo-bg"></div>
+
+    <div class="envelope-wrapper">
+      <!-- Floating bismillah -->
+      <p class="bismillah-float">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+
+      <div class="envelope" id="envelope">
+        <!-- Envelope flap -->
+        <div class="flap" id="flap">
+          <div class="flap-inner"></div>
+          <div class="seal">
+            <img src="iconweb.png" alt="Logo" class="seal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="seal-fallback">✦</div>
+          </div>
+        </div>
+
+        <!-- Envelope body -->
+        <div class="envelope-body">
+          <div class="envelope-lines">
+            <div class="env-line"></div>
+            <div class="env-line short"></div>
+            <div class="env-line shorter"></div>
+          </div>
+        </div>
+
+        <!-- Letter inside -->
+        <div class="letter" id="letter">
+          <div class="letter-header">
+            <div class="ornament-top">❧</div>
+            <p class="letter-bismillah">بِسْمِ اللَّهِ</p>
+            <h2 class="letter-org">JARINGAN KABINET LENTERA ASA</h2>
+            <div class="letter-divider"><span>✦</span></div>
+            <p class="letter-subtitle">Dengan hormat mengundang Anda untuk hadir dalam</p>
+          </div>
+          <div class="letter-event-name">
+            <h1 id="event-title">JARINGAN HEALING</h1>
+            <p id="event-subtitle">Plunyon Kalikuning</p>
+          </div>
+          <div class="letter-footer">
+            <p class="letter-date" id="letter-date">📅 Tanggal Acara</p>
+            <p class="letter-place" id="letter-place">📍 Tempat Acara</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="open-btn" id="open-btn" onclick="openEnvelope()">
+        <span class="open-btn-icon">💌</span>
+        <span>Buka Undangan</span>
+      </button>
+
+      <p class="tap-hint">Ketuk untuk melihat undangan</p>
+    </div>
+  </div>
+
+  <!-- ============ PAGE 2: MAIN CONTENT ============ -->
+  <div id="page-main" class="page">
+    <!-- Sticky Nav -->
+    <nav class="sticky-nav" id="stickyNav">
+      <div class="nav-brand">
+        <img src="iconweb.png" alt="Logo" class="nav-logo" onerror="this.style.display='none'" />
+        <span>Jaringan UKKI</span>
+      </div>
+      <div class="nav-links">
+        <a href="#countdown">Hitung Mundur</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#lokasi">Lokasi</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#penutup">Penutup</a>
+      </div>
+      <button class="music-toggle" id="musicToggle" onclick="toggleMusic()">
+        <span id="musicIcon">🎵</span>
+      </button>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="geo-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content reveal">
+        <p class="hero-bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+        <div class="hero-ornament">⬟ ✦ ⬟</div>
+        <h1 class="hero-title" id="hero-title"> UNDANGAN JARINGAN HEALING </h1>
+        <p class="hero-subtitle" id="hero-subtitle">#Bermain Bersama, Bertumbuh Bersama</p>
+        <div class="hero-divider"></div>
+        <p class="hero-org">Dipersembahkan oleh <strong>Divisi media Rongawi</strong></p>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+        <span>Gulir ke bawah</span>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN SECTION -->
+    <section class="section countdown-section" id="countdown">
+      <div class="section-inner">
+        <div class="section-label">Hitung Mundur</div>
+        <h2 class="section-title">Menuju Hari Istimewa</h2>
+        <div class="quran-verse reveal">
+          <p class="arabic-text">وَسَارِعُوا إِلَىٰ مَغْفِرَةٍ مِّن رَّبِّكُمْ</p>
+          <p class="verse-trans">"Dan bersegeralah kamu kepada ampunan dari Tuhanmu..." (QS. Ali Imran: 133)</p>
+        </div>
+        <div class="countdown-grid reveal" id="countdown-grid">
+          <div class="count-box">
+            <div class="count-num" id="days">00</div>
+            <div class="count-label">Hari</div>
+          </div>
+          <div class="count-box">
+            <div class="count-num" id="hours">00</div>
+            <div class="count-label">Jam</div>
+          </div>
+          <div class="count-box">
+            <div class="count-num" id="minutes">00</div>
+            <div class="count-label">Menit</div>
+          </div>
+          <div class="count-box">
+            <div class="count-num" id="seconds">00</div>
+            <div class="count-label">Detik</div>
+          </div>
+        </div>
+        <div class="event-datetime reveal">
+          <div class="datetime-item">
+            <span class="dt-icon">📅</span>
+            <div>
+              <div class="dt-label">Hari & Tanggal</div>
+              <div class="dt-val" id="dt-date">rabu, 15 Juli 2026</div>
+            </div>
+          </div>
+          <div class="datetime-item">
+            <span class="dt-icon">🕐</span>
+            <div>
+              <div class="dt-label">Waktu</div>
+              <div class="dt-val" id="dt-time">08.00 WIB – Selesai</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENTANG SECTION -->
+    <section class="section tentang-section" id="tentang">
+      <div class="section-inner">
+        <div class="section-label">Tentang Acara</div>
+        <h2 class="section-title">Pendahuluan & Tujuan</h2>
+
+        <div class="tentang-grid">
+          <div class="tentang-card reveal">
+            <div class="card-icon-wrap">
+              <span class="card-icon">📖</span>
+            </div>
+            <h3>Pendahuluan</h3>
+            <p id="pendahuluan-text">
+              Bismillahirrahmanirrahim. Segala puji bagi Allah SWT yang telah memberikan kita kesempatan sehingga akan berkumpul kembali pada tanggal 15 juli di plunyong.
+            </p>
+          </div>
+
+          <div class="tentang-card reveal">
+            <div class="card-icon-wrap">
+              <span class="card-icon">🎯</span>
+            </div>
+            <h3>Tujuan Acara</h3>
+            <ul class="goal-list" id="goal-list">
+              <li>Mempererat tali silaturahmi antar anggota organisasi</li>
+              <li>Meningkatkan kapasitas dan kompetensi anggota</li>
+              <li>Memperkuat nilai-nilai keislaman dalam berorganisasi</li>
+              <li>Mewujudkan visi Kabinet Lentera Asa yang progresif</li>
+              <li>Menginspirasi untuk lanjut 2 periode pengurusan</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Islamic ornamental divider -->
+        <div class="islamic-divider reveal">
+          <div class="idiv-line"></div>
+          <div class="idiv-ornament">❋ ◆ ❋</div>
+          <div class="idiv-line"></div>
+        </div>
+
+        <div class="rundown-wrap reveal">
+          <h3 class="rundown-title">Susunan Acara</h3>
+          <div class="rundown-list" id="rundown-list">
+            <div class="rundown-item">
+              <div class="rd-time">08.00</div>
+              <div class="rd-dot"></div>
+              <div class="rd-event">Registrasi Peserta dan beli tiket</div>
+            </div>
+            <div class="rundown-item">
+              <div class="rd-time">08.30</div>
+              <div class="rd-dot"></div>
+              <div class="rd-event">Berjalan menelusuri lembah</div>
+            </div>
+            <div class="rundown-item">
+              <div class="rd-time">09.00</div>
+              <div class="rd-dot"></div>
+              <div class="rd-event">Masak makanan dan bermain</div>
+            </div>
+            <div class="rundown-item">
+              <div class="rd-time">09.30</div>
+              <div class="rd-dot"></div>
+              <div class="rd-event">Pembukaan,tilawah al-qur'an dan pengajian akbar</div>
+            </div>
+            <div class="rundown-item">
+              <div class="rd-time">12.00</div>
+              <div class="rd-dot"></div>
+              <div class="rd-event">Sholat berjamaah</div>
+            </div>
+            <div class="rundown-item">
+              <div class="rd-time">13.30</div>
+              <div class="rd-dot"></div>
+              <div class="rd-event">Sesi Lanjutan & Diskusi proker jaringan</div>
+            </div>
+            <div class="rundown-item">
+              <div class="rd-time">15.30</div>
+              <div class="rd-dot"></div>
+              <div class="rd-event">Penutupan & Do'a Bersama</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOKASI SECTION -->
+    <section class="section lokasi-section" id="lokasi">
+      <div class="section-inner">
+        <div class="section-label">Lokasi</div>
+        <h2 class="section-title">Tempat Pelaksanaan</h2>
+        <div class="lokasi-content reveal">
+          <div class="lokasi-info">
+            <div class="lokasi-detail">
+              <span class="lk-icon">🏞️</span>
+              <div>
+                <div class="lk-label">Objek Wisata</div>
+                <div class="lk-val" id="venue-name">Plunyong Kalikuning</div>
+              </div>
+            </div>
+            <div class="lokasi-detail">
+              <span class="lk-icon">📍</span>
+              <div>
+                <div class="lk-label">Alamat</div>
+                <div class="lk-val" id="venue-address">Kedungsriti, RT.01/RW.06, Sidorejo, Umbulharjo, Kec. Cangkringan, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55583</div>
+              </div>
+            </div>
+            <div class="lokasi-detail">
+              <span class="lk-icon">🚗</span>
+              <div>
+                <div class="lk-label">Petunjuk</div>
+                <div class="lk-val">Bayar Parkir Sendiri</div>
+              </div>
+            </div>
+            <a class="maps-btn" id="maps-btn" href="https://maps.google.com" target="_blank">
+              Buka di Google Maps ↗
+            </a>
+          </div>
+          <div class="map-embed-wrap">
+            <iframe
+              id="map-iframe"
+              src=""
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERI / PANITIA SECTION -->
+    <section class="section galeri-section" id="galeri">
+      <div class="section-inner">
+        <div class="section-label">Anggota Jaringan</div>
+        <h2 class="section-title">Foto Pengurus dan Idola Kita</h2>
+        <p class="section-desc">Mereka yang berdedikasi dan mengabdi untuk ummat (katanya sih)</p>
+
+        <div class="photo-grid reveal" id="photo-grid">
+          <!-- Photos inserted by config or placeholder -->
+          <div class="photo-card">
+            <div class="photo-frame">
+              <div class="photo-placeholder">
+                <span>👤</span>
+              </div>
+            </div>
+            <div class="photo-name">King Thobiq</div>
+            <div class="photo-role">Ketua Guild</div>
+          </div>
+          <div class="photo-card">
+            <div class="photo-frame">
+              <div class="photo-placeholder"><span>👤</span></div>
+            </div>
+            <div class="photo-name">King rusdi</div>
+            <div class="photo-role">Wakil Ketua</div>
+          </div>
+          <div class="photo-card">
+            <div class="photo-frame">
+              <div class="photo-placeholder"><span>👤</span></div>
+            </div>
+            <div class="photo-name">Mas Amba</div>
+            <div class="photo-role">Sekretaris</div>
+          </div>
+          <div class="photo-card">
+            <div class="photo-frame">
+              <div class="photo-placeholder"><span>👤</span></div>
+            </div>
+            <div class="photo-name">Putri Kecil Ayah</div>
+            <div class="photo-role">Bendahara</div>
+          </div>
+          <div class="photo-card">
+            <div class="photo-frame">
+              <div class="photo-placeholder"><span>👤</span></div>
+            </div>
+            <div class="photo-name">Mas Gatot</div>
+            <div class="photo-role">Koordinator Divisi Acara</div>
+          </div>
+          <div class="photo-card">
+            <div class="photo-frame">
+              <div class="photo-placeholder"><span>👤</span></div>
+            </div>
+            <div class="photo-name">Mas Fuad imam besar</div>
+            <div class="photo-role">Wakil Koordinator Divisi Acara</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PENUTUP SECTION -->
+    <section class="section penutup-section" id="penutup">
+      <div class="geo-bg geo-dark"></div>
+      <div class="section-inner">
+        <div class="penutup-content reveal">
+          <div class="penutup-ornament">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="30,2 37,21 57,21 42,34 48,54 30,42 12,54 18,34 3,21 23,21" fill="rgba(240,180,41,0.8)" />
+            </svg>
+          </div>
+          <p class="penutup-bismillah">السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ</p>
+          <h2 class="penutup-title">Sampai Jumpa di Acara! 👋🏻</h2>
+          <p class="penutup-body" id="penutup-text">
+            Kehadiran Anda adalah kehormatan dan kebahagiaan bagi kami. Semoga Allah SWT meridhoi setiap langkah kita, memudahkan urusan kita, dan menjadikan acara ini penuh keberkahan bagi kita semua.
+          </p>
+          <div class="doa-wrap">
+            <p class="doa-arabic">رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ</p>
+            <p class="doa-trans">"Ya Tuhan kami, terimalah dari kami. Sesungguhnya Engkaulah Yang Maha Mendengar lagi Maha Mengetahui." (QS. Al-Baqarah: 127)</p>
+          </div>
+          <div class="penutup-signed">
+            <div class="signed-ornament">ᯓ  ✈︎ </div>
+            <p>Hormat kami,</p>
+            <p class="signed-name">Pengelola Objek Wisata</p>
+            <div class="signed-ornament"></div>
+          </div>
+          <div class="konfirmasi-wrap">
+            <p class="konfirmasi-label">Konfirmasi Kehadiran</p>
+            <a class="konfirmasi-btn" id="wa-btn" href="https://wa.me/6282138823773?text=Assalamu'alaikum%2C+saya+konfirmasi+kehadiran+saya+di+acara+Jaringan+Healing" target="_blank">
+              💬 Konfirmasi via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-logos">
+        <img src="iconweb.png" alt="Logo" class="footer-logo" onerror="this.style.display='none'" />
+      </div>
+      <p>© 2026 Kabinet Lentera Asa · Dibuat dengan ❤️ dan Bismillah</p>
+    </footer>
+  </div>
+
+  <!-- Audio element -->
+  <audio id="bgMusic" loop>
+    <source src="musikweb.mp3" type="audio/mpeg" />
+    <!-- Fallback: Nasheed instrumental placeholder -->
+  </audio>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
